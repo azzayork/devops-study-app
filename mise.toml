@@ -8,12 +8,16 @@ gh = "latest"
 flux2 = "latest"
 jq = "latest"
 yq = "latest"
+pre-commit = "latest"
 
 [settings]
-pyhton.uv_venv_auto = true
+python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = ['python']
 experimental = true
 
 [env]
 APP_REPO = 'devops-study-app'
 GITOPS_REPO = 'devops-study-app-gitops'
+
+[hooks]
+enter = "bash ./scripts/setup_project"

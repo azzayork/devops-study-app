@@ -1,0 +1,19 @@
+[tools]
+python = 'latest'
+uv = 'latest'
+kubectl = 'latest'
+k9s = 'latest'
+helm = "latest"
+gh = "latest"
+flux2 = "latest"
+jq = "latest"
+yq = "latest"
+
+[settings]
+pyhton.uv_venv_auto = true
+idiomatic_version_file_enable_tools = ['python']
+experimental = true
+
+[env]
+APP_REPO = 'devops-study-app'
+GITOPS_REPO = 'devops-study-app-gitops'

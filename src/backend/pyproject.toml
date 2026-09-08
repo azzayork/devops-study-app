@@ -1,0 +1,22 @@
+[project]
+name = "study-tracker-backend"
+version = "0.0.0"
+description = "Backend API for tracking study time for DevOps certifications"
+readme = "README.md"
+authors = [{ name = "Aaron York", email = "email@example.com" }]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "uvicorn>=0.52.4",
+]
+
+[project.scripts]
+study-tracker-api = "backend.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "backend"

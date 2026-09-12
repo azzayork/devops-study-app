@@ -61,7 +61,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "coverage"
 version = "7.16.0"
 source = { registry = "https://pypi.org/simple" }

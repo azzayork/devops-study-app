@@ -11,12 +11,12 @@ from .storage import get_all_sessions, get_sessions_by_tag, get_statistics, save
 
 # Define public API
 __all__ = [
+    "Stats",
     "StudySession",
     "StudySessionCreate",
-    "Stats",
-    "save_session",
+    "app",
     "get_all_sessions",
     "get_sessions_by_tag",
     "get_statistics",
-    "app",
+    "save_session",
 ]

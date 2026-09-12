@@ -6,13 +6,19 @@ readme = "README.md"
 authors = [{ name = "Aaron York", email = "email@example.com" }]
 requires-python = ">=3.14"
 dependencies = [
-    "fastapi>=0.141.1",
-    "httpx>=0.28.1",
-    "uvicorn>=0.52.4",
+  "fastapi>=0.141.1",
+  "httpx>=0.28.1",
+  "pytest>=9.1.1",
+  "pytest-asyncio>=1.4.0",
+  "ruff>=0.16.7",
+  "uvicorn>=0.52.4",
 ]
 
 [project.scripts]
 study-tracker-api = "backend.main:main"
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
 
 [build-system]
 requires = ["uv_build>=0.12.9,<0.13.0"]
@@ -20,3 +26,6 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name = "backend"
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["ASYNC230"]

@@ -19,10 +19,10 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "pytest>=9.1.1",
-    "pytest-asyncio>=1.4.0",
-    "pytest-cov>=7.1.0",
-    "ruff>=0.16.7",
+  "pytest>=9.1.1",
+  "pytest-asyncio>=1.4.0",
+  "pytest-cov>=7.1.0",
+  "ruff>=0.16.7",
 ]
 
 [tool.uv.build-backend]
@@ -30,3 +30,6 @@ module-name = "backend"
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["ASYNC230"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["backend"]

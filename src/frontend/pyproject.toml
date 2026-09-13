@@ -5,10 +5,7 @@ description = "Frontend for DevOps Study Tracker application"
 readme = "README.md"
 authors = [{ name = "Aaron York", email = "email@example.com" }]
 requires-python = ">=3.14"
-dependencies = [
-    "flask>=3.1.3",
-    "requests>=2.34.2",
-]
+dependencies = ["flask>=3.1.3", "requests>=2.34.2"]
 
 [project.scripts]
 frontend = "frontend.main:main"
@@ -19,3 +16,14 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name = "frontend"
+
+[dependency-groups]
+dev = [
+  "pytest>=9.1.1",
+  "pytest-cov>=7.1.0",
+  "responses>=0.26.3",
+  "ruff>=0.16.7",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["frontend"]

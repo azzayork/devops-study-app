@@ -47,7 +47,7 @@ async def root():
 @app.get("/health")
 async def health():
     """Health endpoint for kubernetes probes"""
-    return {"status": "healthy"}
+    return {"status": "healthyyyyyyy"}
 
 
 @app.post("/sessions", response_model=StudySession)

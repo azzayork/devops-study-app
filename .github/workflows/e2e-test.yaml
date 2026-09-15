@@ -1,27 +1,12 @@
-name: End-To-End Tests
+name: End-to-End Tests
 
+# This workflow is triggered by other workflows, not directly from PRs
 on:
-  pull_request:
+  workflow_call:
 
 jobs:
-  check_paths:
-    runs-on: ubuntu-latest
-    outputs:
-      should_run: ${{ steps.filter.outputs.code }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3.0.2
-        id: filter
-        with:
-          filters: |
-            code:
-              - 'src/backend/**'
-              - 'src/frontend/**'
-
-  test:
-    name: E2E Test
-    needs: check_paths
-    if: ${{ needs.check_paths.outputs.should_run == 'true' }}
+  e2e_test:
+    name: End-to-End Tests
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -31,16 +16,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install K3d
+        uses: nolar/setup-k3d-k3s@v1
+        with:
+          version: "latest"
+          skip-creation: true
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: "latest"
+
       - name: Install UV
         uses: astral-sh/setup-uv@v5
 
       - name: Set up Python
         run: uv python install
 
-      - name: Install dependencies
+      - name: Run E2E tests
         run: |
-          uv sync --locked --dev
-
-      - name: Run End-To-End Tests
-        run: |
-          uv run e2e_test.py
+          uv run python e2e_test.py

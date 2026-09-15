@@ -47,7 +47,7 @@ async def root():
 @app.get("/health")
 async def health():
     """Health endpoint for kubernetes probes"""
-    return {"status": "healthyyyyyyy"}
+    return {"status": "healthy"}
 
 
 @app.post("/sessions", response_model=StudySession)
@@ -93,6 +93,7 @@ async def read_stats():
 
 
 # Marker for CI pipeline
+# This comment is used to trigger the CI pipeline when changes are made to this file.
 # This comment is used to trigger the CI pipeline when changes are made to this file.
 # This comment is used to trigger the CI pipeline when changes are made to this file.
 

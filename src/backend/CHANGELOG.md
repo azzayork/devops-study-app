@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/azzayork/devops-study-app/compare/backend-v0.3.0...backend-v0.4.0) (2026-09-18)
+
+
+### Features
+
+* **backend:** another even more important feature ([#18](https://github.com/azzayork/devops-study-app/issues/18)) ([068dc5d](https://github.com/azzayork/devops-study-app/commit/068dc5dbaa5af6010527008051297176180f8b3c))
+
 ## [0.3.0](https://github.com/azzayork/devops-study-app/compare/backend-v0.2.0...backend-v0.3.0) (2026-09-18)
 
 
